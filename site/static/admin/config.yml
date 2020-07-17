@@ -1,5 +1,10 @@
 backend:
   name: git-gateway
+  repo: zephyrz73/hugo-cms-with-netlify
+  open_authoring: true
+
+publish_mode: editorial_workflow
+
 
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
