@@ -3,7 +3,7 @@ title: "Just in: small batch of Jamaican Blue Mountain in store next week"
 date: 2017-01-19T15:04:10.000Z
 author: Zephyr Zhou
 description: We’re proud to announce that we’ll be offering a small batch of
-  Jamaica Blue Mountain coffee beans in our store next week.
+  Jamaica Blue Mountain coffee beans in our store next week. asdf
 image: img/about-direct-sourcing.jpg
 ---
 
