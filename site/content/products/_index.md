@@ -94,3 +94,5 @@ pricing:
       price: "?"
 type: products
 ---
+
+{{<cloud-intro "AWS">}}
