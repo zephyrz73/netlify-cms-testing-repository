@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: zephyrz73/hugo-cms-with-netlify
   open_authoring: true
 
@@ -12,6 +12,7 @@ public_folder: "img"
 collections: # A list of collection the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
+    preview_path: "post/{{slug}}"
     folder: "site/content/post" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
@@ -23,6 +24,7 @@ collections: # A list of collection the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
+    preview_path: "."
     files:
       - file: "site/content/_index.md"
         label: "Home Page"
@@ -46,6 +48,7 @@ collections: # A list of collection the CMS should be able to edit
       - file: "site/content/contact/_index.md"
         label: "Contact Page"
         name: "contact"
+        preview_path: "contact/{{slug}}"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Logo, name: logo, widget: image}
@@ -63,6 +66,7 @@ collections: # A list of collection the CMS should be able to edit
       - file: "site/content/products/_index.md"
         label: "Products Page"
         name: "products"
+        preview_path: "products/{{slug}}"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
@@ -76,6 +80,7 @@ collections: # A list of collection the CMS should be able to edit
       - file: "site/content/values/_index.md"
         label: "Values Page"
         name: "values"
+        preview_path: "values/{{slug}}"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
