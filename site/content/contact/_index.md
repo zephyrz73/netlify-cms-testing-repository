@@ -7,4 +7,4 @@ contact_entries:
   - heading: Working hours
     text: "Monday – Saturday: 9AM – 7PM We’re closed on Sundays"
 ---
-{{< instagram "CC5TV4glotP" >}}
+{{< cloud-intro "AWS">}}
