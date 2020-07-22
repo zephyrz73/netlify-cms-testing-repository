@@ -18,24 +18,38 @@ CMS.registerPreviewTemplate("products", ProductsPreview);
 CMS.registerPreviewTemplate("values", ValuesPreview);
 CMS.registerPreviewTemplate("contact", ContactPreview);
 CMS.registerEditorComponent({
-    id: "instagram",
-    label: "Instagram",
+    id: "CloudIntro",
+    label: "Cloud Intro",
     fields: [{
-        name: "pid",
-        label: "Post id",
-        widget: "string"
+            name: "provider",
+            label: "Provider Name",
+            widget: "select",
+            options: ["AWS", "Azure"]
+
     }],
-    pattern: /{{< instagram ([a-zA-Z0-9]+) >}}/,
+    pattern: /{{< cloud-intro ([a-zA-Z0-9]+) >}}/,
     fromBlock: function(match) {
         return {
-            pid: match[1]
+            provider: match[1]
         };
     },
     toBlock: function(obj) {
-        return `{{< instagram ${obj.pid} >}}`;
+        return `{{< cloud-intro "${obj.provider}">}}`;
     },
     toPreview: function(obj) {
-        return `{{< instagram ${obj.pid} >}}`;
+        return `<div>
+        <p>
+            Pulumi's infrastructure-as-code SDK helps you create, deploy, and manage "$(obj.provider)" containers,
+            serverless functions, and infrastructure using real programming languages. The Pulumi "$(obj.provider)" provider packages
+            and <a href="{{ relref . "/contact" }}">CLI</a>
+            help you accomplish all these within minutes.
+        </p>
+        <p>
+            This guide will have you quickly provisioning infrastructure on "$(obj.provider)" with Pulumi in your
+            favorite language.
+        </p>
+    </div>
+    }}`;
     },
 });
 CMS.init();
