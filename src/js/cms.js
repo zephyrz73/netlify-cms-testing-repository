@@ -18,24 +18,26 @@ CMS.registerPreviewTemplate("products", ProductsPreview);
 CMS.registerPreviewTemplate("values", ValuesPreview);
 CMS.registerPreviewTemplate("contact", ContactPreview);
 CMS.registerEditorComponent({
-    id: "youtube",
-    label: "Youtube",
+    id: "CloudIntro",
+    label: "Cloud Intro",
     fields: [{
-        name: "id",
-        label: "Youtube Video ID",
-        widget: "string"
+            name: "provider",
+            label: "Provider Name",
+            widget: "select",
+            options: ["AWS", "Azure"]
+
     }],
-    pattern: /{{< youtube ([a-zA-Z0-9]+) >}}/,
+    pattern: /{{< cloud-intro ([a-zA-Z0-9]+) >}}/,
     fromBlock: function(match) {
         return {
-            id: match[1],
+            provider: match[1]
         };
     },
     toBlock: function(obj) {
-        return `{{< youtube ${obj.id} >}}`;
+        return `{{< cloud-intro "${obj.provider}">}}`;
     },
     toPreview: function(obj) {
-        return `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube Video"/>`;
+        return `{{< cloud-intro "${obj.provider}">}}`;
     },
 });
 CMS.init();
