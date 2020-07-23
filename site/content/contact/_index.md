@@ -7,4 +7,6 @@ contact_entries:
   - heading: Working hours
     text: "Monday – Saturday: 9AM – 7PM We’re closed on Sundays"
 ---
-{{< cloud-intro "Azure">}}
+
+
+{{< cloud-intro "AWS">}}
