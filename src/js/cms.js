@@ -37,7 +37,7 @@ CMS.registerEditorComponent({
         return `{{< cloud-intro "${obj.provider}">}}`;
     },
     toPreview: function(obj) {
-        return `{{< cloud-intro "${obj.provider}">}}`;
+        return ('<p> hello'+obj.provider+'</p>');
     },
 });
 CMS.init();
