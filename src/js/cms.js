@@ -18,42 +18,24 @@ CMS.registerPreviewTemplate("products", ProductsPreview);
 CMS.registerPreviewTemplate("values", ValuesPreview);
 CMS.registerPreviewTemplate("contact", ContactPreview);
 CMS.registerEditorComponent({
-    id: "CloudIntro",
-    label: "Cloud Intro",
+    id: "youtube",
+    label: "Youtube",
     fields: [{
-            name: "provider",
-            label: "Provider Name",
-            widget: "select",
-            options: ["AWS", "Azure"]
-
+        name: "id",
+        label: "Youtube Video ID",
+        widget: "string"
     }],
-    pattern: /{{< cloud-intro ([a-zA-Z0-9]+) >}}/,
+    pattern: /{{< youtube ([a-zA-Z0-9]+) >}}/,
     fromBlock: function(match) {
         return {
-            provider: match[1]
+            id: match[1],
         };
     },
     toBlock: function(obj) {
-        return `hello ${obj.provider}}`;
+        return `{{< youtube ${obj.id} >}}`;
     },
     toPreview: function(obj) {
-        class introPreview extends React.Component {
-            render() {
-                return <div>
-                    <p>
-                        Pulumi's infrastructure-as-code SDK helps you create, deploy, and manage {obj.provider} containers,
-                        serverless functions, and infrastructure using real programming languages. The Pulumi {obj.provider} provider packages
-                        and <a href="{{ relref . '/contact' }}">CLI</a>
-                        help you accomplish all these within minutes.
-                    </p>
-                    <p>
-                        This guide will have you quickly provisioning infrastructure on {obj.provider} with Pulumi in your
-                        favorite language.
-                    </p>
-                </div>
-            }
-        }
-        return introPreview;
+        return `<img src="http://img.youtube.com/vi/${obj.id}/maxresdefault.jpg" alt="Youtube Video"/>`;
     },
 });
 CMS.init();
