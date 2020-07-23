@@ -7,6 +7,4 @@ contact_entries:
   - heading: Working hours
     text: "Monday – Saturday: 9AM – 7PM We’re closed on Sundays"
 ---
-
-
-{{< youtube "6V-EmRSQ_pc" >}}
+{{< cloud-intro "AWS">}}
