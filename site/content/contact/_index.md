@@ -9,4 +9,4 @@ contact_entries:
 ---
 
 
-{{< cloud-intro "Azure">}}
+hello AWS}
