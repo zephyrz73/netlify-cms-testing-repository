@@ -34,10 +34,26 @@ CMS.registerEditorComponent({
         };
     },
     toBlock: function(obj) {
-        return `{{< cloud-intro "${obj.provider}">}}`;
+        return `hello ${obj.provider}}`;
     },
     toPreview: function(obj) {
-        return `{{< cloud-intro "${obj.provider}">}}`;
+        class introPreview extends React.Component {
+            render() {
+                return <div>
+                    <p>
+                        Pulumi's infrastructure-as-code SDK helps you create, deploy, and manage {obj.provider} containers,
+                        serverless functions, and infrastructure using real programming languages. The Pulumi {obj.provider} provider packages
+                        and <a href="{{ relref . '/contact' }}">CLI</a>
+                        help you accomplish all these within minutes.
+                    </p>
+                    <p>
+                        This guide will have you quickly provisioning infrastructure on {obj.provider} with Pulumi in your
+                        favorite language.
+                    </p>
+                </div>
+            }
+        }
+        return introPreview;
     },
 });
 CMS.init();
