@@ -1,11 +1,10 @@
 ---
-title: "Contact"
-logo: "/img/logo.svg"
+title: Contact
+logo: /img/logo.svg
 contact_entries:
-  - heading: Location
-    text: "3153 Lynn Avenue, South San Francisco, California 94080"
+  - heading: Location klkj
+    text: 3153 Lynn Avenue, South San Francisco, California 94080
   - heading: Working hours
     text: "Monday – Saturday: 9AM – 7PM We’re closed on Sundays"
 ---
-
-{{<cloud-intro "AWS">}}
+{{< cloud-intro "AWS" >}}
