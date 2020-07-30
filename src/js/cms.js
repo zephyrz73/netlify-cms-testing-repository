@@ -34,10 +34,10 @@ CMS.registerEditorComponent({
         };
     },
     toBlock: function(obj) {
-        return `{{< cloud-intro "${obj.provider}">}}`;
+        return `{{< cloud-intro "${obj.provider}" >}}`;
     },
     toPreview: function(obj) {
-        return ('<p> hello'+obj.provider+'</p>');
+        return `{{< cloud-intro "${obj.provider}" >}}`;
     },
 });
 CMS.init();
